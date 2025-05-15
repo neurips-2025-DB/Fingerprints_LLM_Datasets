@@ -2,6 +2,7 @@ from datasets import get_dataset_config_names, load_dataset
 import json
 from datetime import datetime
 import os
+import random
 
 # Base output directory
 output_dir = "paloma"
@@ -40,9 +41,7 @@ for config in configs:
 print("\n🎉 All test sets saved individually in:", output_dir)
 
 
-import os
-import random
-
+# 1000 random lines from each configuration (domain)
 def trim_jsonl_files(directory, num_lines=1000, seed=7):
     # Set the seed for reproducibility
     random.seed(seed)
@@ -68,6 +67,7 @@ def trim_jsonl_files(directory, num_lines=1000, seed=7):
                 f.writelines(selected_lines)
 
             print(f"{filename}: Trimmed to {num_lines} lines.")
+
 
 # Example usage with a seed
 trim_jsonl_files('paloma')
