@@ -90,10 +90,11 @@ For calculating the perplexity for the generalisation experiments, follow the pr
 
 Also prepare 1000 unseen evaluation sequences from each dataset. The evaluation sequences should be in `.jsonl` format, and in their raw text form (untokenized). Make sure they have the text sequences in the field `'text'`. 
 
-Run `cd perplexity` and create a directory `pretrained_models` and place all the pretrained models in it. Also create a directory `cross_dataset` and place the evaluation sequences in it (1 jsonl file for each dataset, each jsonl file has 1000 lines). 
+In the [perplexity](https://github.com/neurips-2025-DB/Fingerprints_LLM_Datasets/tree/main/perplexity) directory create a directory `pretrained_models` and place all the pretrained models in it. Also create a directory `cross_dataset` and place the evaluation sequences in it (1 jsonl file for each dataset, each jsonl file has 1000 lines). 
 
 To download and prepare the benchmark data: WikiText-103 and Paloma, simply run:
 ```
+cd perplexity
 python wikitext.py
 python paloma.py
 ```
